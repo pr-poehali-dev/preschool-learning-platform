@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1781856105244241245.html"
 	],
 	prefix: "",
 	theme: {
@@ -18,7 +19,20 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['"Baloo 2"', 'cursive'],
+				body: ['Nunito', 'sans-serif'],
+				hand: ['Pacifico', 'cursive']
+			},
 			colors: {
+				candy: {
+					purple: '#8B5CF6',
+					pink: '#FF6BAA',
+					yellow: '#FFD23F',
+					sky: '#4FC3F7',
+					green: '#5CD68A',
+					orange: '#FF8A3D'
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +98,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-18px)' }
+				},
+				'wiggle': {
+					'0%, 100%': { transform: 'rotate(-4deg)' },
+					'50%': { transform: 'rotate(4deg)' }
+				},
+				'pop-in': {
+					'0%': { transform: 'scale(0.6)', opacity: '0' },
+					'70%': { transform: 'scale(1.08)' },
+					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'spin-slow': {
+					from: { transform: 'rotate(0deg)' },
+					to: { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 4s ease-in-out infinite',
+				'wiggle': 'wiggle 0.8s ease-in-out infinite',
+				'pop-in': 'pop-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both',
+				'spin-slow': 'spin-slow 14s linear infinite'
 			}
 		}
 	},
