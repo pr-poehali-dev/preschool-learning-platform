@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "GET profiles list",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {"profiles": []},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST create profile",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Лёва", "age": 5},
+      "expectedStatus": 201,
+      "expectedBody": {"profile": {"name": "Лёва"}},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
